@@ -1,4 +1,5 @@
-﻿using Identity.Application.Features.Auth.Commands.RegisterCommands;
+﻿using Identity.Application.Features.Auth.Commands.LoginCommands;
+using Identity.Application.Features.Auth.Commands.RegisterCommands;
 using Identity.Application.Features.Auth.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -26,5 +27,12 @@ public class AuthController : ControllerBase
             Message = "User registered successfully",
             UserId = userId
         });
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequestDto request)
+    {
+        var response = await _mediator.Send(new LoginCommand(request));
+        return Ok(response);
     }
 }

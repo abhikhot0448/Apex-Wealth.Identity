@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Identity.Application.Common;
+using Identity.Application.Services;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
@@ -23,6 +24,8 @@ public static class DependencyInjection
         services.AddTransient(
             typeof(IPipelineBehavior<,>),
             typeof(ValidationBehavior<,>));
+
+        services.AddScoped<JwtTokenService>();
 
         return services;
     }
