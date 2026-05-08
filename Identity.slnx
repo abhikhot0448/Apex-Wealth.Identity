@@ -5,5 +5,7 @@
     <Project Path="Identity.Domain/Identity.Domain.csproj" />
     <Project Path="Identity.Infrastructure/Identity.Infrastructure.csproj" />
   </Folder>
-  <Folder Name="/tests/" />
+  <Folder Name="/tests/">
+    <Project Path="Identity.Application.Tests/Identity.Application.Tests.csproj" Id="f5210bca-5fd8-4f2c-a2d7-c718958ed745" />
+  </Folder>
 </Solution>

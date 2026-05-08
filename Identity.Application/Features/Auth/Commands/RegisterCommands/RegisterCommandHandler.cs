@@ -28,6 +28,11 @@ public class RegisterCommandHandler
         var emailExists = await _userRepository
             .EmailExistsAsync(request.Request.Email);
 
+        if (emailExists)
+        {
+            throw new Exception("Email already exists.");
+        }
+
         var user = new User
         {
             Id = Guid.NewGuid(),
