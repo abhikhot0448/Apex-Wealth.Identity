@@ -5,8 +5,7 @@ using MediatR;
 
 namespace Identity.Application.Features.Auth.Commands.LoginCommands;
 
-public class LoginCommandHandler
-    : IRequestHandler<LoginCommand, AuthResponseDto>
+public class LoginCommandHandler : IRequestHandler<LoginCommand, AuthResponseDto>
 {
     private readonly IUserRepository _userRepository;
     private readonly IPasswordHasher _passwordHasher;
